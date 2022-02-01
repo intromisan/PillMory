@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "App to remind you to take your pills",
+    "githubUrl": "https://github.com/intromisan/PillMory"
   }
 }

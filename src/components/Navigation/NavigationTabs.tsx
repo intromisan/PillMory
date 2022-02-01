@@ -10,24 +10,6 @@ import AccountScreen from "../../screens/AccountScreen";
 const Tab = createBottomTabNavigator();
 
 const NavigationTabs = () => {
-  const screenOptions = {
-    tabBarStyle: {
-      position: "absolute",
-      top: 25,
-      right: 20,
-      bottom: 25,
-      left: 20,
-      elevation: 0,
-      backgroundColor: "#ffffff",
-      borderRadius: 15,
-      height: 90,
-    },
-  };
-
-  const sceneContainerStyle = {
-    backgroundColor: "#95a5a6",
-  };
-
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -41,7 +23,8 @@ const NavigationTabs = () => {
           elevation: 0,
           backgroundColor: "#ffffff",
           borderRadius: 15,
-          height: 60,
+          height: 70,
+          paddingBottom: 0,
         },
         tabBarIcon: ({ color, size }) => {
           let iconName: "home" | "bell" | "search" | "user" | undefined =
