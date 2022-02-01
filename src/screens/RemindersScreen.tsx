@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const HomeScreen = () => {
+const RemindersScreen = () => {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <Text>Reminders Screen</Text>
     </View>
   );
 };
 
-export default HomeScreen;
+export default RemindersScreen;
 
 const styles = StyleSheet.create({});
