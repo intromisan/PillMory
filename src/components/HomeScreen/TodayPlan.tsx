@@ -16,19 +16,19 @@ const TodayPlan = () => {
         <ProgressChart
           data={[0.5]}
           width={height * 0.18}
-          height={height * 0.2}
+          height={190}
           radius={60}
           hideLegend
           strokeWidth={7}
           chartConfig={{
             backgroundGradientFromOpacity: 0,
             backgroundGradientToOpacity: 0,
-            color: (opacity = 1) => `rgba(255,99,71, ${opacity})`,
+            color: (opacity = 1) => `rgba(233,240,255, ${opacity})`,
           }}
           style={{ alignSelf: "flex-end" }}
         />
         <View style={styles.chartPercentage}>
-          <Text style={{ fontSize: 32 }}>50%</Text>
+          <Text style={{ fontSize: 32, color: "white" }}>50%</Text>
         </View>
       </View>
     </View>
@@ -39,9 +39,8 @@ export default TodayPlan;
 
 const styles = StyleSheet.create({
   componentContainer: {
-    height: height * 0.2,
-    marginTop: 30,
-    paddingHorizontal: width * 0.1,
+    height: 190,
+    paddingHorizontal: width * 0.08,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -67,14 +66,17 @@ const styles = StyleSheet.create({
   mainText: {
     fontSize: 28,
     fontWeight: "500",
+    color: "#e9f0ff",
   },
   secondaryText: {
     fontSize: 16,
     marginTop: 10,
+    color: "#e9f0ff",
   },
   link: {
-    fontSize: 20,
+    fontSize: 18,
     textDecorationLine: "underline",
     marginTop: "auto",
+    color: "#e9f0ff",
   },
 });

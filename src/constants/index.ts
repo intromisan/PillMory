@@ -1,3 +1,4 @@
 import images from "./images";
+import COLORS from "./color";
 
-export { images };
+export { images, COLORS };

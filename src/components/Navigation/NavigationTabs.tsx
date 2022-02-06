@@ -12,6 +12,7 @@ const Tab = createBottomTabNavigator();
 const NavigationTabs = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Reminders"
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         headerShown: false,

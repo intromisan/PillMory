@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     height: 200,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 30,
+    marginTop: 20,
   },
   avatar: {
     width: 100,
@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 28,
     marginTop: 15,
+    color: "white",
   },
 });
