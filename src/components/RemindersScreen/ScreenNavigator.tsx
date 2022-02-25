@@ -14,7 +14,7 @@ const ScreenNavigator = () => {
       <View style={styles.screenNavigatorItem}>
         <Text>Upcoming</Text>
       </View>
-      <View style={styles.activeBlock} />
+      <View style={[styles.activeBlock]} />
     </View>
   );
 };
@@ -24,7 +24,8 @@ export default ScreenNavigator;
 const styles = StyleSheet.create({
   screenNavigator: {
     backgroundColor: COLORS.backgroundLightColor,
-    marginHorizontal: width * 0.08,
+    width: width * 0.85,
+    alignSelf: "center",
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 40,
@@ -37,14 +38,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     zIndex: 4,
+    elevation: 5,
   },
   activeBlock: {
     position: "absolute",
     backgroundColor: "#ffffff",
     top: 5,
     left: 3.5,
-    width: (width - width * 0.16) / 2 - 10,
+    width: (width * 0.85) / 2 - 10,
     height: 30,
+    elevation: 3,
     zIndex: 3,
     borderRadius: 5,
     shadowColor: "#ccccd6",
@@ -54,6 +57,5 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 3,
-    elevation: 10,
   },
 });
