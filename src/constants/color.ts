@@ -7,6 +7,7 @@ const white = "#ffffff";
 const main = "#F6F5EC";
 const secondary = "#FEAEA5";
 const accent = "#A477AF";
+const darkAccent = "#373251";
 
 export default {
   backgroundColor,
@@ -18,4 +19,5 @@ export default {
   main,
   secondary,
   accent,
+  darkAccent,
 };

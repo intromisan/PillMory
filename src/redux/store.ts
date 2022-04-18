@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import RemindersReducer from "./reminders";
+import RemindersReducer from "./slices/reminders";
 
 export const store = configureStore({
   reducer: {

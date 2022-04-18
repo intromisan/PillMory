@@ -10,6 +10,7 @@ import React from "react";
 import { Medication } from "../../types/interfaces";
 import { Dimensions } from "react-native";
 import { COLORS } from "../../constants";
+import DayComponent from "./DayComponent";
 
 const { width } = Dimensions.get("window");
 
@@ -25,18 +26,8 @@ const DayList: FC<DayListProps> = ({ date, medicationList }) => {
       <View style={styles.listContainer}>
         <FlatList
           data={medicationList}
-          renderItem={({ item, index }) => {
-            return (
-              <View style={styles.medicationContainer} key={item.id}>
-                <View style={styles.medicationInfo}>
-                  <Text style={styles.medicationTitle}>{item.name}</Text>
-                  <Text style={styles.medicationDose}>{item.dose}</Text>
-                </View>
-                <TouchableOpacity style={styles.completeButton}>
-                  <Text>Complete now</Text>
-                </TouchableOpacity>
-              </View>
-            );
+          renderItem={({ item }) => {
+            return <DayComponent {...item} />;
           }}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
         />
@@ -70,29 +61,5 @@ const styles = StyleSheet.create({
     borderStyle: "dotted",
     borderRadius: 1,
     marginVertical: 20,
-  },
-  medicationContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  medicationInfo: {
-    flex: 2,
-  },
-  medicationTitle: {
-    fontSize: 20,
-    fontWeight: "700",
-  },
-  medicationDose: {
-    fontWeight: "700",
-    color: COLORS.textDark,
-  },
-  completeButton: {
-    flex: 1,
-    borderWidth: 1,
-    borderRadius: 6,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 30,
-    backgroundColor: COLORS.white,
   },
 });

@@ -11,10 +11,30 @@ import React from "react";
 import { COLORS } from "../constants";
 import ScreenNavigator from "../components/RemindersScreen/ScreenNavigator";
 import DayList from "../components/RemindersScreen/DayList";
+import { useAppSelector } from "../hooks";
 
 const { width, height } = Dimensions.get("window");
 
-const reminders = [
+const todayReminders = [
+  {
+    id: "qweqwe",
+    date: "Tue, Jan 21",
+    medicationList: [
+      {
+        id: "1asda1",
+        name: "Spasmalgon, 50g",
+        dose: "2 pills, after food",
+      },
+      {
+        id: "1as123a",
+        name: "Paracetamol, 20g",
+        dose: "1 pills, before breakfast",
+      },
+    ],
+  },
+];
+
+const upcomingReminders = [
   {
     id: "qweqwe",
     date: "Tue, Jan 21",
@@ -82,13 +102,15 @@ const reminders = [
 ];
 
 const RemindersScreen = () => {
+  const screenState = useAppSelector((state) => state.reminders.screenState);
+
   return (
     <SafeAreaView style={styles.screenContainer}>
       <Text style={styles.screenTitle}>Reminders</Text>
       <ScreenNavigator />
       <View style={{ flex: 1, marginBottom: height * 0.08, marginTop: 30 }}>
         <FlatList
-          data={reminders}
+          data={screenState === "today" ? todayReminders : upcomingReminders}
           renderItem={({ item }) => (
             <DayList
               key={item.id}

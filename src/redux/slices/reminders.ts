@@ -1,26 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface RemindersState {
-  screenShown: "today" | "upcoming";
+  screenState: "today" | "upcoming";
 }
-
-const initialState: RemindersState = {
-  screenShown: "today",
-};
 
 export const remindersSlice = createSlice({
   name: "reminders",
-  initialState,
+  initialState: {
+    screenState: "today",
+  } as RemindersState,
   reducers: {
-    onScreenShownChange: (
+    onScreenStateChange: (
       state,
       action: PayloadAction<"today" | "upcoming">
     ) => {
-      state.screenShown = action.payload;
+      state.screenState = action.payload;
     },
   },
 });
 
-export const { onScreenShownChange } = remindersSlice.actions;
+export const { onScreenStateChange } = remindersSlice.actions;
 
 export default remindersSlice.reducer;

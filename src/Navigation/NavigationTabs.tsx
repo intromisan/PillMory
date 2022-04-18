@@ -6,14 +6,14 @@ import HomeScreen from "../screens/HomeScreen";
 import RemindersScreen from "../screens/RemindersScreen";
 import DiscoverScreen from "../screens/DiscoverScreen";
 import AccountScreen from "../screens/AccountScreen";
-import LoginScreen from "../screens/LoginScreen";
+import { COLORS } from "../constants";
 
 const Tab = createBottomTabNavigator();
 
 const NavigationTabs = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Reminders"
+      initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         headerShown: false,
@@ -43,7 +43,7 @@ const NavigationTabs = () => {
 
           return <Feather name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: COLORS.secondary,
         tabBarInactiveTintColor: "gray",
       })}
     >
