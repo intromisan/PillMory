@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
-import { images } from "../../constants";
+import { COLORS, images } from "../../constants";
 import { Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 28,
     marginTop: 15,
-    color: "white",
+    color: COLORS.textDark,
   },
 });

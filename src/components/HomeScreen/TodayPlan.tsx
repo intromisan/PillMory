@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { ProgressChart } from "react-native-chart-kit";
+import { COLORS } from "../../constants";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,12 +24,12 @@ const TodayPlan = () => {
           chartConfig={{
             backgroundGradientFromOpacity: 0,
             backgroundGradientToOpacity: 0,
-            color: (opacity = 1) => `rgba(233,240,255, ${opacity})`,
+            color: (opacity = 1) => `rgba(55, 50, 81, ${opacity})`,
           }}
           style={{ alignSelf: "flex-end" }}
         />
         <View style={styles.chartPercentage}>
-          <Text style={{ fontSize: 32, color: "white" }}>50%</Text>
+          <Text style={{ fontSize: 32, color: COLORS.textDark }}>50%</Text>
         </View>
       </View>
     </View>
@@ -66,17 +67,17 @@ const styles = StyleSheet.create({
   mainText: {
     fontSize: 28,
     fontWeight: "500",
-    color: "#e9f0ff",
+    color: COLORS.textDark,
   },
   secondaryText: {
     fontSize: 16,
     marginTop: 10,
-    color: "#e9f0ff",
+    color: COLORS.textDark,
   },
   link: {
     fontSize: 18,
     textDecorationLine: "underline",
     marginTop: "auto",
-    color: "#e9f0ff",
+    color: COLORS.textDark,
   },
 });

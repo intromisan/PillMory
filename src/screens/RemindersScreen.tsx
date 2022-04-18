@@ -107,7 +107,7 @@ export default RemindersScreen;
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    backgroundColor: COLORS.backgroundColor,
+    backgroundColor: COLORS.secondary,
   },
   screenTitle: {
     marginTop: height * 0.04,
@@ -115,6 +115,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontSize: 28,
     fontWeight: "500",
-    color: COLORS.textLight,
+    color: COLORS.textDark,
   },
 });

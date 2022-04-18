@@ -2,10 +2,11 @@ import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
-import HomeScreen from "../../screens/HomeScreen";
-import RemindersScreen from "../../screens/RemindersScreen";
-import DiscoverScreen from "../../screens/DiscoverScreen";
-import AccountScreen from "../../screens/AccountScreen";
+import HomeScreen from "../screens/HomeScreen";
+import RemindersScreen from "../screens/RemindersScreen";
+import DiscoverScreen from "../screens/DiscoverScreen";
+import AccountScreen from "../screens/AccountScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 const Tab = createBottomTabNavigator();
 

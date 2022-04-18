@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Dimensions } from "react-native";
+import { COLORS } from "../../constants";
 
 const { width, height } = Dimensions.get("window");
 
@@ -94,9 +95,8 @@ const pillBackgroundGenerator = () => {
 
 const styles = StyleSheet.create({
   componentContainer: {
-    backgroundColor: "#e9f0ff",
-    color: "#e9f0ff",
-
+    backgroundColor: COLORS.main,
+    color: COLORS.textDark,
     position: "absolute",
     bottom: 0,
     height: height * 0.42,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   calendarItemActive: {
-    backgroundColor: "#68a973",
+    backgroundColor: COLORS.accent,
   },
   dayContainer: {
     backgroundColor: "#ffffff",
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   dayActive: {
-    color: "#68a973",
+    color: COLORS.accent,
     fontWeight: "500",
   },
   weekDay: {

@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import WelcomeAccount from "../components/HomeScreen/WelcomeAccount";
 import TodayPlan from "../components/HomeScreen/TodayPlan";
 import PillsPerDay from "../components/HomeScreen/PillsPerDay";
+import { COLORS } from "../constants";
 
 const HomeScreen = () => {
   return (
@@ -20,6 +21,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
-    backgroundColor: "#5e51e9",
+    backgroundColor: COLORS.secondary,
   },
 });

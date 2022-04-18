@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 24,
     fontWeight: "700",
-    color: COLORS.textLight,
+    color: COLORS.textDark,
   },
   listContainer: {
     marginTop: 20,
     paddingVertical: 30,
     paddingHorizontal: 20,
-    backgroundColor: COLORS.backgroundLightColor,
+    backgroundColor: COLORS.main,
     borderRadius: 15,
   },
   separator: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   medicationDose: {
     fontWeight: "700",
-    color: COLORS.textDarkGray,
+    color: COLORS.textDark,
   },
   completeButton: {
     flex: 1,
