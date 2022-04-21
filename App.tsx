@@ -1,14 +1,20 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import AppNavigation from "./src/Navigation";
 
-import NavigationTabs from "./src/Navigation/NavigationTabs";
 import { store } from "./src/redux/store";
+import LoadAssets from "./src/shared/LoadAssets";
+
+const fonts = {
+  "Miedinger-Bold": require("./assets/fonts/Miedinger-W01-Bold.otf"),
+  "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+};
 
 export default function App() {
   return (
     <Provider store={store}>
-      <AppNavigation />
+      <LoadAssets fonts={fonts}>
+        <AppNavigation />
+      </LoadAssets>
     </Provider>
   );
 }
