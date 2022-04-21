@@ -14,7 +14,10 @@ import { COLORS } from "../../constants";
 import DismissKeyboardView from "../../shared/HOC/DismissKeyboardView";
 import InputField from "./InputField";
 import { useAppDispatch } from "../../hooks";
-import { changeAuthScreenHandler } from "../../redux/slices/authSlice";
+import {
+  authHandler,
+  changeAuthScreenHandler,
+} from "../../redux/slices/authSlice";
 
 const screenHeight = Dimensions.get("screen").height;
 const screenWidth = Dimensions.get("screen").width;
@@ -25,6 +28,8 @@ type FormData = {
 };
 
 const SignInForm = () => {
+  const dispatch = useAppDispatch();
+
   const {
     control,
     handleSubmit,
@@ -32,10 +37,8 @@ const SignInForm = () => {
   } = useForm<FormData>();
 
   const submitHandler = handleSubmit((data) => {
-    console.log(data);
+    dispatch(authHandler());
   });
-
-  const dispatch = useAppDispatch();
 
   return (
     <DismissKeyboardView style={styles.formContainer}>

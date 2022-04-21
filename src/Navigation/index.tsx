@@ -1,28 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../screens/LoginScreen";
 import NavigationTabs from "./NavigationTabs";
+import { useAppSelector } from "../hooks";
 
 const AppNavigation = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
-
   const Stack = createNativeStackNavigator();
 
+  const { isAuth } = useAppSelector((state) => state.auth);
+
   return (
-    // <NavigationContainer>
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {isSignedIn ? (
+      {isAuth ? (
         <Stack.Screen name="App" component={NavigationTabs} />
       ) : (
-        <Stack.Screen name="SignIn" component={LoginScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
       )}
     </Stack.Navigator>
-    // </NavigationContainer>
   );
 };
 
 export default AppNavigation;
-
-const styles = StyleSheet.create({});
