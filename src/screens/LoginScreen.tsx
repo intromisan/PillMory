@@ -3,22 +3,30 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../constants";
 
-import LoginForm from "../components/LoginScreen/LoginForm";
+import SignInForm from "../components/LoginScreen/SignInForm";
 import { LinearGradient } from "expo-linear-gradient";
+import { useAppSelector } from "../hooks";
+import SignUpForm from "../components/LoginScreen/SignUpForm";
 
 const screenHeight = Dimensions.get("screen").height;
 const screenWidth = Dimensions.get("screen").width;
 
 const LoginScreen = () => {
+  const authScreen = useAppSelector((state) => state.auth.authScreen);
+
   return (
     <SafeAreaView style={styles.screenContainer}>
-      <LinearGradient
-        colors={[COLORS.secondary, COLORS.accent]}
-        style={styles.background}
-        locations={[0.8, 0.8]}
-      />
-      {/* <View style={styles.bubble} /> */}
-      <LoginForm />
+      {authScreen === "signUp" ? (
+        <LinearGradient
+          colors={[COLORS.secondary, COLORS.accent]}
+          style={styles.background}
+          locations={[0.8, 0.8]}
+        />
+      ) : (
+        <LinearGradient colors={[COLORS.secondary]} style={styles.background} />
+      )}
+      {authScreen === "signIn" && <View style={styles.bubble} />}
+      {authScreen === "signIn" ? <SignInForm /> : <SignUpForm />}
     </SafeAreaView>
   );
 };
