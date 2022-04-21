@@ -7,6 +7,7 @@ import LoadAssets from "./src/shared/LoadAssets";
 const fonts = {
   "Miedinger-Bold": require("./assets/fonts/Miedinger-W01-Bold.otf"),
   "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+  "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
 };
 
 export default function App() {

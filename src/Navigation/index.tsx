@@ -6,20 +6,20 @@ import LoginScreen from "../screens/LoginScreen";
 import NavigationTabs from "./NavigationTabs";
 
 const AppNavigation = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isSignedIn ? (
-          <Stack.Screen name="App" component={NavigationTabs} />
-        ) : (
-          <Stack.Screen name="SignIn" component={LoginScreen} />
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {isSignedIn ? (
+        <Stack.Screen name="App" component={NavigationTabs} />
+      ) : (
+        <Stack.Screen name="SignIn" component={LoginScreen} />
+      )}
+    </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 
